@@ -27,7 +27,7 @@ def get_all_vendas():
 @app.get('/venda/{id_venda}')
 def get_venda(id_venda: int):
     if id_venda in vendas:
-        return vendas[id_venda]
+        return JSONResponse(status_code=200, content=vendas[id_venda])
     else:
         return JSONResponse(status_code=400, content={'erro': 'ID invalido'})
 
