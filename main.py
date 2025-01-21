@@ -46,7 +46,7 @@ def delete_venda(id_venda: int):
     else:
         return JSONResponse(status_code=404, content={'Error': 'ID not fund'})
 
-@app.put('/atualizar/{id_venda}')
+@app.put('/update/{id_venda}')
 def put_venda(id_venda: int, venda: Vendas):
     if id_venda in vendas:
         data_venda = venda.__dict__
@@ -54,3 +54,4 @@ def put_venda(id_venda: int, venda: Vendas):
         return JSONResponse(status_code=200, content=vendas[id_venda])
     else:
         return JSONResponse(status_code=404, content={'Error': 'ID not fund'})
+
